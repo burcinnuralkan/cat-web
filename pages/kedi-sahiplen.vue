@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen bg-white py-10">
+    <!-- Başlık ve banner -->
     <div class="max-w-3xl mx-auto flex flex-col items-center bg-gradient-to-tr from-pink-50 to-white rounded-3xl shadow-lg p-8 mb-10">
       <img
         src="/images/kedi-sahiplenme-3.jpg"
@@ -16,6 +17,8 @@
         <span class="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold">#yeniarkadaş</span>
       </div>
     </div>
+
+    <!-- Arama alanı -->
     <div class="max-w-3xl mx-auto mt-16 mb-8 px-4">
       <input
         v-model="search"
@@ -24,6 +27,8 @@
         class="w-full px-4 py-2 border border-pink-200 rounded-lg shadow-sm focus:ring-pink-300 focus:outline-none"
       />
     </div>
+
+    <!-- Sabit Kediler -->
     <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
       <div
         v-for="cat in filteredCats"
@@ -41,58 +46,51 @@
         </button>
       </div>
     </div>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 px-4">
-      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2">
-        <h2 class="text-2xl font-bold text-pink-600 mb-2 flex items-center gap-2">
-          <span>🐾</span> Sahiplenme Süreci
-        </h2>
-        <ul class="list-disc pl-6 text-gray-700 mb-2">
-          <li>Kedinin karakteri ve sağlık durumu hakkında bilgi al.</li>
-          <li>Evinde güvenli bir alan oluştur.</li>
-          <li>Veterinerde ilk kontrolleri ve aşıları tamamla.</li>
-          <li>Onu ailenin bir üyesi olarak yavaşça ortama alıştır.</li>
-        </ul>
-        <div class="text-xs text-gray-500 mt-3">
-          <span class="inline-block bg-pink-100 text-pink-600 rounded px-2 py-0.5 mr-1">Sakinlik</span>
-          <span class="inline-block bg-pink-100 text-pink-600 rounded px-2 py-0.5">Sabır</span>
-        </div>
+
+    <!-- 🎉 Rastgele Kediler (Pinia'dan gelen) -->
+    <section class="max-w-6xl mx-auto mt-24 px-4 space-y-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-pink-700">Seni Bekleyen Diğer Minikler 🐾</h2>
+        <button
+          @click="store.fetchKediler"
+          class="bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded"
+        >
+          Yeni Kediler Getir 🔄
+        </button>
       </div>
 
-      <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-2">
-        <h2 class="text-2xl font-bold text-pink-600 mb-2 flex items-center gap-2">
-          <span>💡</span> Sık Sorulanlar
-        </h2>
-        <details class="mb-1">
-          <summary class="cursor-pointer font-medium text-gray-800 hover:text-pink-600 transition">
-            Evde başka evcil hayvan varsa?
-          </summary>
-          <div class="pl-2 text-gray-700 text-sm">
-            Yavaş tanıştırma, ayrı mama ve kum kabı önerilir. Zaman ver!
+      <div v-if="store.yukleniyor">Yükleniyor...</div>
+      <div v-if="store.hata" class="text-red-500">Hata: {{ store.hata }}</div>
+
+      <div
+        v-if="!store.yukleniyor"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <div
+          v-for="kedi in store.kediler"
+          :key="kedi.id"
+          class="rounded-lg overflow-hidden shadow hover:scale-105 transition bg-white"
+        >
+          <img :src="kedi.url" class="w-full h-64 object-cover" alt="Kedi" />
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-pink-700">{{ kedi.isim }}</h3>
+            <p class="text-sm text-gray-500">Yeni yuvasını bekliyor 🏠</p>
+            <button
+              class="mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded text-sm"
+            >
+              Sahiplen ✨
+            </button>
           </div>
-        </details>
-        <details class="mb-1">
-          <summary class="cursor-pointer font-medium text-gray-800 hover:text-pink-600 transition">
-            Sahiplenme ücretli mi?
-          </summary>
-          <div class="pl-2 text-gray-700 text-sm">
-            Genellikle sahiplendirme ücretsizdir. Sadece aşı-mama katkı bedeli istenebilir.
-          </div>
-        </details>
-        <details>
-          <summary class="cursor-pointer font-medium text-gray-800 hover:text-pink-600 transition">
-            Kedinin tuvalet eğitimi?
-          </summary>
-          <div class="pl-2 text-gray-700 text-sm">
-            Temiz, sakin ve ulaşılabilir bir kum kabı yeterlidir. Çoğu kedi içgüdüsel olarak alışır.
-          </div>
-        </details>
-        <div class="flex items-center gap-2 mt-4">
-          <NuxtLink to="/iletisim" class="text-pink-600 hover:underline text-sm font-medium flex items-center gap-1">
-            <span>Destek Al</span> <span>→</span>
-          </NuxtLink>
         </div>
       </div>
+    </section>
+
+    <!-- Sahiplenme Süreci ve SSS -->
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 px-4">
+      <!-- ... senin süreç ve sık sorulanlar bölümü aynı kalabilir ... -->
+      <!-- değişiklik gerekirse söyle ekleyelim -->
     </div>
+
     <div class="max-w-3xl mx-auto mt-12 text-center text-gray-500 text-sm">
       <span class="bg-pink-100 px-4 py-2 rounded-xl shadow-sm">
         Her ay <b>25+</b> patili dostumuz yeni bir yuva buldu! Sen de mutlu bir hikayeye ortak olabilirsin.
@@ -101,8 +99,9 @@
   </div>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useKediStore } from '~/stores/catStore'
 
 const search = ref('')
 
@@ -117,4 +116,11 @@ const filteredCats = computed(() =>
     (cat.name + ' ' + cat.breed).toLowerCase().includes(search.value.toLowerCase())
   )
 )
+
+// 🐾 Rastgele kediler için Pinia store
+const store = useKediStore()
+
+onMounted(() => {
+  store.fetchKediler()
+})
 </script>

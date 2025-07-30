@@ -23,11 +23,6 @@ import Subscribe from '~/components/Subscribe.vue';
 <MultiCard
 />
 
-  <div>
-    <h1 class="text-2xl font-bold">Kedi Ana Sayfası 🐱</h1>
-    <FetchData />
-  </div>
-
 <Istatistik/>
 <Featured/>
 <Blogs/>
