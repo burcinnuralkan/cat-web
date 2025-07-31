@@ -1,7 +1,7 @@
 <template>
     <div class="max-w-3xl mx-auto py-12 px-4">
       <h1 class="text-3xl font-extrabold text-pink-700 mb-4">Kedi Severler Topluluğu</h1>
-      <img src="/images/topluluk.jpg" alt="Kedi Topluluğu" class="w-40 mx-auto mb-6" />
+      
       <p class="text-gray-800 text-lg mb-4">
         Portalımızda kedi dostları olarak tecrübelerimizi, hikayelerimizi ve önerilerimizi paylaşabileceğimiz sıcak bir topluluğuz!
       </p>

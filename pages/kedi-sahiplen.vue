@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen bg-white py-10">
-    <!-- Başlık ve banner -->
     <div class="max-w-3xl mx-auto flex flex-col items-center bg-gradient-to-tr from-pink-50 to-white rounded-3xl shadow-lg p-8 mb-10">
       <img
         src="/images/kedi-sahiplenme-3.jpg"
@@ -18,7 +17,6 @@
       </div>
     </div>
 
-    <!-- Arama alanı -->
     <div class="max-w-3xl mx-auto mt-16 mb-8 px-4">
       <input
         v-model="search"
@@ -27,8 +25,6 @@
         class="w-full px-4 py-2 border border-pink-200 rounded-lg shadow-sm focus:ring-pink-300 focus:outline-none"
       />
     </div>
-
-    <!-- Sabit Kediler -->
     <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
       <div
         v-for="cat in filteredCats"
@@ -47,7 +43,6 @@
       </div>
     </div>
 
-    <!-- 🎉 Rastgele Kediler (Pinia'dan gelen) -->
     <section class="max-w-6xl mx-auto mt-24 px-4 space-y-4">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl font-bold text-pink-700">Seni Bekleyen Diğer Minikler 🐾</h2>
@@ -85,11 +80,44 @@
       </div>
     </section>
 
-    <!-- Sahiplenme Süreci ve SSS -->
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 px-4">
-      <!-- ... senin süreç ve sık sorulanlar bölümü aynı kalabilir ... -->
-      <!-- değişiklik gerekirse söyle ekleyelim -->
-    </div>
+<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 px-4">
+  <div>
+    <h2 class="text-xl font-bold text-pink-700 mb-4">Sahiplenme Süreci</h2>
+    <ul class="space-y-3 text-gray-700 text-sm">
+      <li>
+        ✅ <b>1. Kedinizi Seçin:</b> İlanlardan kalbinizi çalan patili dostu bulun.
+      </li>
+      <li>
+        📝 <b>2. Formu Doldurun:</b> Sahiplenme formunu eksiksiz doldurun.
+      </li>
+      <li>
+        📞 <b>3. İletişime Geçin:</b> Gönüllülerimiz sizinle iletişime geçsin.
+      </li>
+      <li>
+        🏠 <b>4. Yeni Yuvaya Kavuşun:</b> Kedi dostunuzla mutlu yaşama merhaba deyin!
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold text-pink-700 mb-4">Sık Sorulan Sorular</h2>
+    <ul class="space-y-3 text-gray-700 text-sm">
+      <li>
+        ❓ <b>Sahiplenme ücreti var mı?</b><br />
+        Hayır, tüm kediler ücretsiz olarak sahiplendirilir. Sadece sevgiye ihtiyacınız var!
+      </li>
+      <li>
+        ❓ <b>Veteriner kontrolü yapılıyor mu?</b><br />
+        Evet, sahiplendirme öncesi tüm kediler veteriner kontrolünden geçirilir.
+      </li>
+      <li>
+        ❓ <b>Evcil hayvanlara alerjim varsa ne yapmalıyım?</b><br />
+        Önce kısa süreli misafirlik deneyebilirsiniz. Sağlık önceliğinizdir.
+      </li>
+    </ul>
+  </div>
+</div>
+
 
     <div class="max-w-3xl mx-auto mt-12 text-center text-gray-500 text-sm">
       <span class="bg-pink-100 px-4 py-2 rounded-xl shadow-sm">
@@ -117,7 +145,6 @@ const filteredCats = computed(() =>
   )
 )
 
-// 🐾 Rastgele kediler için Pinia store
 const store = useKediStore()
 
 onMounted(() => {

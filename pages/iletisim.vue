@@ -8,12 +8,12 @@
         <div class="flex items-center gap-3 bg-pink-50 px-4 py-2 rounded-lg">
           <span class="text-green-500 text-2xl">💬</span>
           <span class="font-bold text-gray-800">WhatsApp:</span>
-          <a href="https://wa.me/905456178336" class="text-pink-700 font-semibold hover:underline ml-1">+90 533 850 45 00</a>
+          <a href="https://wa.me/900000000000" class="text-pink-700 font-semibold hover:underline ml-1">+90 000 000 00 00</a>
         </div>
         <div class="flex items-center gap-3 bg-yellow-50 px-4 py-2 rounded-lg">
           <span class="text-yellow-500 text-2xl">📞</span>
           <span class="font-bold text-gray-800">Çağrı Merkezi:</span>
-          <a href="tel:+903926504500" class="text-pink-700 font-semibold hover:underline ml-1">+90 392 650 45 00</a>
+          <a href="tel:+903926504500" class="text-pink-700 font-semibold hover:underline ml-1">+90 000 000 00 00</a>
         </div>
         <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-lg">
           <span class="text-blue-500 text-2xl">📧</span>

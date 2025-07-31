@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { useKediStore } from "~/stores/catStore"; // DİKKAT: catStore değil, kediStore olmalı!
+import { useKediStore } from "~/stores/catStore"; 
 
 const kediStore = useKediStore();
 

@@ -14,15 +14,15 @@ export const useKediStore = defineStore("kedi", {
       this.hata = null;
 
       try {
-        const res = await axios.get("https://api.thecatapi.com/v1/images/search?limit=6"); // güvenli oynamak için 10 çektik
-        const kediVerileri = res.data.slice(0, 6); // sadece ilk 6'yı kullanalım
+        const res = await axios.get("https://api.thecatapi.com/v1/images/search?limit=10");
+        const kediVerileri = res.data.slice(0, 6); 
 
-        const isimler = getUniqueKediIsimleri(6); // tekrar etmeyen 6 isim getir
+        const isimler = getUniqueKediIsimleri(6); 
 
         this.kediler = kediVerileri.map((kedi: any, index: number) => ({
           url: kedi.url,
           id: kedi.id,
-          isim: isimler[index] || `Kedi-${index + 1}` // yedek isim
+          isim: isimler[index] || `Kedi-${index + 1}`
         }));
       } catch (err: any) {
         this.hata = err.message;

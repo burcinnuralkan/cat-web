@@ -1,7 +1,6 @@
 <template>
     <div class="max-w-3xl mx-auto py-12 px-4">
       <h1 class="text-3xl font-extrabold text-pink-700 mb-4">Kedi Cinsleri</h1>
-      <img src="/images/cat-breeds.jpg" alt="Kedi Cinsleri" class="w-40 mx-auto mb-6" />
       <p class="text-gray-800 text-lg mb-4">
         Her kedinin karakteri ve görünüşü farklıdır. Burada en bilinen kedi ırklarını ve özelliklerini bulabilirsin:
       </p>

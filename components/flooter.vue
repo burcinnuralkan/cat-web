@@ -3,9 +3,9 @@
       <div class="max-w-4xl mx-auto flex flex-col items-center gap-6">
   
         <div class="text-sm text-gray-700 font-medium text-center">
-          WHATSAPP: <span class="font-normal">+90 533 850 45 00</span> 
+          WHATSAPP: <span class="font-normal">+90 000 000 00 00</span> 
           <span class="mx-2">|</span>
-          ÇAĞRI MERKEZİ: <span class="font-normal">+90 392 650 45 00</span>
+          ÇAĞRI MERKEZİ: <span class="font-normal">+90 000 000 00 00</span>
         </div>
   
         <nav class="flex flex-wrap justify-center gap-4 text-gray-700 font-medium text-sm">
