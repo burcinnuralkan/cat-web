@@ -3,7 +3,7 @@
 Bu proje, kedi sahiplenmek isteyen ya da hali hazırda kedi sahibi olan kişiler için hazırlanmış kapsamlı bir **kedi bakım rehberi** sitesidir. Nuxt 3 ve TailwindCSS kullanılarak geliştirilmiştir.
 
 ## 🔗 Canlı Yayın
-👉 [Siteyi Görüntüle](https://cat-oqsj0t00q-burcins-projects-6693d637.vercel.app)
+👉 [Siteyi Görüntüle]((https://cat-rfhqljhap-burcins-projects-6693d637.vercel.app))
 
 ## 🚀 Özellikler
 
